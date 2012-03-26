@@ -1,0 +1,7 @@
+
+    [paste.app_factory]
+    main = webwatcher_ui.config.middleware:make_app
+
+    [paste.app_install]
+    main = pylons.util:PylonsInstaller
+    

@@ -1,0 +1,7 @@
+*/*.pyc
+*/*.pyo
+*/devdata.db
+*/*.egg-info
+*/*.egg
+*/build
+*/dist
