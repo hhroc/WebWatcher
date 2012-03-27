@@ -110,6 +110,8 @@ class User(DeclarativeBase):
 
     display_name = Column(Unicode(255))
 
+    twitter_name = Column(String(255))
+
     _password = Column('password', Unicode(128),
                        info={'rum': {'field':'Password'}})
 

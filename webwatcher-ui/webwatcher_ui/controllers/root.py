@@ -5,10 +5,7 @@ from tg import expose, flash, require, url, lurl, request, redirect
 from tg.i18n import ugettext as _, lazy_ugettext as l_
 from webwatcher_ui import model
 from repoze.what import predicates
-from webwatcher_ui.controllers.secure import SecureController
 from webwatcher_ui.model import DBSession, metadata
-from tgext.admin.tgadminconfig import TGAdminConfig
-from tgext.admin.controller import AdminController
 
 from webwatcher_ui.lib.base import BaseController
 from webwatcher_ui.controllers.error import ErrorController
@@ -30,9 +27,6 @@ class RootController(BaseController):
     must be wrapped around with :class:`tg.controllers.WSGIAppController`.
 
     """
-    secc = SecureController()
-    admin = AdminController(model, DBSession, config_type=TGAdminConfig)
-
     error = ErrorController()
 
     @expose('webwatcher_ui.templates.index')
@@ -44,21 +38,6 @@ class RootController(BaseController):
     def about(self):
         """Handle the 'about' page."""
         return dict(page='about')
-
-    @expose('webwatcher_ui.templates.environ')
-    def environ(self):
-        """This method showcases TG's access to the wsgi environment."""
-        return dict(environment=request.environ)
-
-    @expose('webwatcher_ui.templates.data')
-    @expose('json')
-    def data(self, **kw):
-        """This method showcases how you can use the same controller for a data page and a display page"""
-        return dict(params=kw)
-    @expose('webwatcher_ui.templates.authentication')
-    def auth(self):
-        """Display some information about auth* on this application."""
-        return dict(page='auth')
 
     @expose('webwatcher_ui.templates.index')
     @require(predicates.has_permission('manage', msg=l_('Only for managers')))

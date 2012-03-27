@@ -29,6 +29,9 @@ base_config.renderers.append('json')
 #Set the default renderer
 base_config.default_renderer = 'mako'
 base_config.renderers.append('mako')
+base_config.use_toscawidgets = False
+base_config.use_toscawidgets2 = True
+
 #Configure the base SQLALchemy Setup
 base_config.use_sqlalchemy = True
 base_config.model = webwatcher_ui.model
