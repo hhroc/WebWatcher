@@ -10,6 +10,14 @@ from webwatcher_ui.model import DBSession, metadata
 from webwatcher_ui.lib.base import BaseController
 from webwatcher_ui.controllers.error import ErrorController
 
+import tw2.forms as twf
+
+class LoginForm(twf.TableForm):
+    login = twf.TextField(css_class="text ui-widget-content ui-corner-all")
+    password = twf.PasswordField(css_class="text ui-widget-content ui-corner-all")
+    loginremember = twf.CheckBox(label="Remember Login",css_class="ui-widget-content ui-corner-all")
+    submit = twf.SubmitButton(value="Login", css_class="ui-button ui-button-text-only ui-corner-all")
+
 __all__ = ['RootController']
 
 
@@ -33,6 +41,13 @@ class RootController(BaseController):
     def index(self):
         """Handle the front-page."""
         return dict(page='index')
+
+    @expose('webwatcher_ui.templates.profile')
+    def profile(self):
+        if not request.identity:
+            redirect('/')
+
+        return dict(page='profile')
 
     @expose('webwatcher_ui.templates.about')
     def about(self):
@@ -74,6 +89,11 @@ class RootController(BaseController):
         userid = request.identity['repoze.who.userid']
         flash(_('Welcome back, %s!') % userid)
         redirect(came_from)
+
+
+    @expose()
+    def logout(self, came_from=lurl('/')):
+        redirect('/logout_handler', params=dict(came_from=came_from))
 
     @expose()
     def post_logout(self, came_from=lurl('/')):

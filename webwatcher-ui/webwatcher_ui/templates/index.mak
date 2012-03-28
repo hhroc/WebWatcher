@@ -1,8 +1,7 @@
 <%inherit file="local:templates.master"/>
 
-<%def name="header()">
-</%def>
+<%def name="title()">Web Watcher - Home</%def>
 
-<%def name="title()">
-</%def>
-
+<div class="grid_12">
+<p>Content goes here</p>
+</div>

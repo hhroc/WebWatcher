@@ -8,7 +8,8 @@ repoze.what >= 1.0.8
 repoze.who-friendlyform >= 1.0.4
 repoze.what-pylons >= 1.0
 repoze.who==1.0.19
-tgext.admin >= 0.3.11
 repoze.what-quickstart
 repoze.what.plugins.sql>=1.0.1
-tw.forms
+tw2.forms
+tw2.jquery
+tw2.jqplugins.ui

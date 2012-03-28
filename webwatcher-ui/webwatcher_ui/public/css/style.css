@@ -32,9 +32,13 @@ Base
 
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
+*.wf-loading, .wf-loading * { visibility: hidden; }
+
+*.wf-active, .wf-active * { visibility: visible; font-family: "Droid Sans", sans-serif; }
+
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
-body { margin: 0; font-size: 1em; line-height: 1.4; }
+body { margin: 0; font-size: 0.8em; line-height: 1.4; }
 
 /*
 * Remove text-shadow in selection highlight: h5bp.com/i
@@ -218,20 +222,77 @@ Chrome Frame Prompt
 Author:
 ========================================================================== */
 
+header {
+    height: 110px;
+}
 
+#header_logo {
+    height: 110px;
+    background: url('../images/logo.png') no-repeat;
+}
 
+#user_control_wrapper {
+    display: block;
+    overflow: visible;
+    color: #CCC;
+    height: 110px;
+    background-color: #112233;
+}
 
+#user_control_wrapper #int_div {
+    position: absolute;
+    width: 100%;
+    margin-top: 0.5em;
+}
 
+#int_div .right {
+    margin-right: 0.5em;
+    float: right;
+}
 
+#int_div .left{
+    margin-left: 0.5em;
+}
 
+#user_control_wrapper table th {
+    text-align: right;
+    padding-right: 0.5em;
+}
 
+#user_control_wrapper table tr#buttons td {
+    text-align: right;
+}
 
+#user_control_wrapper table td {
+    text-align: left;
+    padding-bottom: 0.25em;
+}
 
+#header_tabs {
+    background-color: #112233;
+}
 
+#header_tabs.ui-tabs {
+    padding: 0 0 1px 0;
+}
 
+#header_tabs li {
+    background-color: #ccc;
+    margin-bottom: 0;
+}
 
+#header_tabs li.active {
+    background-color: #FFFF26;
+}
 
+#header_tabs li a {
+    font-size: 125%;
+    font-weight: 700;
+}
 
+.right {
+    float: right !important;
+}
 
 /* ==|== media queries ======================================================
 EXAMPLE Media Query for Responsive Design.

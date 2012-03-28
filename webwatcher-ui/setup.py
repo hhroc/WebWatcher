@@ -37,6 +37,7 @@ install_requires=[
     "repoze.what.plugins.sql>=1.0.1",
     "tw2.forms",
     "tw2.jquery",
+    "tw2.jqplugins.ui",
     ]
 
 if sys.version_info[:2] == (2,4):

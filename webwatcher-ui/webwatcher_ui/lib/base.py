@@ -8,6 +8,8 @@ from tg import request
 from tg.i18n import ugettext as _, ungettext
 import webwatcher_ui.model as model
 
+import tw2.jqplugins.ui as jqui
+
 __all__ = ['BaseController']
 
 
@@ -26,6 +28,9 @@ class BaseController(TGController):
         # the request is routed to. This routing information is
         # available in environ['pylons.routes_dict']
 
+        jqui.set_ui_theme_name('smoothness')
+        jqui.jquery_ui_css.inject()
+        jqui.jquery_ui_js.inject()
         request.identity = request.environ.get('repoze.who.identity')
         tmpl_context.identity = request.identity
         return TGController.__call__(self, environ, start_response)

@@ -21,7 +21,7 @@ except ImportError:
 __all__ = ['User', 'Group', 'Permission']
 
 from sqlalchemy import Table, ForeignKey, Column
-from sqlalchemy.types import Unicode, Integer, DateTime
+from sqlalchemy.types import Unicode, String, Integer, DateTime
 from sqlalchemy.orm import relation, synonym
 
 from webwatcher_ui.model import DeclarativeBase, metadata, DBSession

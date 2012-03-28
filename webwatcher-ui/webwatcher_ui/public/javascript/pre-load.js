@@ -1,5 +1,5 @@
 WebFont.load({
   google: {
-    families: ['Maven Pro:400,900'],
+    families: ['Droid Sans:400,700'],
   }
 });
