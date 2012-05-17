@@ -1,0 +1,8 @@
+Yum
+    libxml-devel
+
+Pip
+    libxslt-devel
+    html5lib
+    html-tree-diff
+    BeautifulSoup
