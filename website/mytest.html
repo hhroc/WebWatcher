@@ -1,0 +1,42 @@
+<html>
+<head>
+<script>
+
+function displayid()
+{
+	var userSelection = window.getSelection();
+	var rangeObject = userSelection.getRangeAt(0);
+	var divid = rangeObject.startContainer.parentNode.id;
+	
+	var test = window.getSelection().extentNode.parentNode.id;
+
+	var nodeA = window.getSelection().anchorNode;
+	var nodeB = window.getSelection().anchorNode.parentElement;
+	var nodec = window.getSelection().anchorNode.parentElement.id;
+	
+	alert("id = " + divid);
+}
+
+</script>
+
+</head>
+<body>
+
+	<div id="top">
+
+		<div id="mytextdiv">
+		
+			Yay! Text!
+		
+		</div>
+
+		<div id="mybuttondiv">
+
+			<input type="button" id="myButton" value="Click Me!" onclick="displayid()" />
+
+		</div>
+
+	</div>
+
+</body>
+</html>

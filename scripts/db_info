@@ -1,0 +1,17 @@
+watchlist
+	id
+	username
+	password
+	displayname
+	email
+	twitter
+	phone
+	phonecarrier
+
+watchlist
+	id
+	ownerid
+	address
+	frequency
+	keyword
+	contactmethod
